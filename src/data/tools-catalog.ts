@@ -42,6 +42,27 @@ import { CalendarWeek } from '@/components/tools/CalendarWeek';
 import { LeapYear } from '@/components/tools/LeapYear';
 import { MessagePackJson } from '@/components/tools/MessagePackJson';
 import { BsonJson } from '@/components/tools/BsonJson';
+// Formatters
+import { HtmlFormatter } from '@/components/tools/HtmlFormatter';
+import { CssFormatter } from '@/components/tools/CssFormatter';
+import { JsFormatter } from '@/components/tools/JsFormatter';
+import { SqlFormatter } from '@/components/tools/SqlFormatter';
+import { GraphqlFormatter } from '@/components/tools/GraphqlFormatter';
+// Text Manipulation
+import { CaseConverter } from '@/components/tools/CaseConverter';
+import { LineOperations } from '@/components/tools/LineOperations';
+import { StringOperations } from '@/components/tools/StringOperations';
+// Text Analysis
+import { TextStatistics } from '@/components/tools/TextStatistics';
+import { TextDiff } from '@/components/tools/TextDiff';
+// Generators
+import { LoremIpsum } from '@/components/tools/LoremIpsum';
+import { PasswordGenerator } from '@/components/tools/PasswordGenerator';
+import { PassphraseGenerator } from '@/components/tools/PassphraseGenerator';
+import { SlugGenerator } from '@/components/tools/SlugGenerator';
+import { UlidGenerator } from '@/components/tools/UlidGenerator';
+import { NanoidGenerator } from '@/components/tools/NanoidGenerator';
+import { FakeDataGenerator } from '@/components/tools/FakeDataGenerator';
 
 export const categories: ToolCategoryData[] = [
   {
@@ -113,6 +134,13 @@ export const categories: ToolCategoryData[] = [
     description: { en: 'Date parsing, formatting and calculations', ru: 'Парсинг, форматирование и вычисления с датами' },
     icon: '📅',
     color: 'text-teal-400'
+  },
+  {
+    id: 'text',
+    name: { en: 'Text Tools', ru: 'Текстовые инструменты' },
+    description: { en: 'Text manipulation and processing', ru: 'Обработка и манипуляции с текстом' },
+    icon: '📝',
+    color: 'text-emerald-400'
   },
 ];
 
@@ -856,6 +884,299 @@ export const tools: Tool[] = [
     isNew: true,
     isBeta: false,
     component: BsonJson
+  },
+
+  // Formatters
+  {
+    id: 'html-formatter',
+    slug: 'html-formatter',
+    name: { en: 'HTML Formatter', ru: 'Форматтер HTML' },
+    description: {
+      en: 'Format and beautify HTML code or minify it for production',
+      ru: 'Форматирование и украшение HTML кода или минификация для продакшена'
+    },
+    category: 'formatters',
+    tags: ['html', 'format', 'beautify', 'minify', 'prettier'],
+    icon: '📄',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: HtmlFormatter
+  },
+
+  {
+    id: 'css-formatter',
+    slug: 'css-formatter',
+    name: { en: 'CSS Formatter', ru: 'Форматтер CSS' },
+    description: {
+      en: 'Format and beautify CSS code or minify it for production',
+      ru: 'Форматирование и украшение CSS кода или минификация для продакшена'
+    },
+    category: 'formatters',
+    tags: ['css', 'format', 'beautify', 'minify', 'prettier'],
+    icon: '🎨',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CssFormatter
+  },
+
+  {
+    id: 'js-formatter',
+    slug: 'js-formatter',
+    name: { en: 'JavaScript Formatter', ru: 'Форматтер JavaScript' },
+    description: {
+      en: 'Format and beautify JavaScript/TypeScript code or minify it',
+      ru: 'Форматирование JavaScript/TypeScript кода или минификация'
+    },
+    category: 'formatters',
+    tags: ['javascript', 'typescript', 'format', 'beautify', 'minify', 'prettier'],
+    icon: '📜',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: JsFormatter
+  },
+
+  {
+    id: 'sql-formatter',
+    slug: 'sql-formatter',
+    name: { en: 'SQL Formatter', ru: 'Форматтер SQL' },
+    description: {
+      en: 'Format SQL queries with support for multiple dialects (MySQL, PostgreSQL, etc.)',
+      ru: 'Форматирование SQL запросов с поддержкой разных диалектов (MySQL, PostgreSQL и др.)'
+    },
+    category: 'formatters',
+    tags: ['sql', 'format', 'mysql', 'postgresql', 'sqlite', 'query'],
+    icon: '🗃️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: SqlFormatter
+  },
+
+  {
+    id: 'graphql-formatter',
+    slug: 'graphql-formatter',
+    name: { en: 'GraphQL Formatter', ru: 'Форматтер GraphQL' },
+    description: {
+      en: 'Format and beautify GraphQL queries and schemas',
+      ru: 'Форматирование GraphQL запросов и схем'
+    },
+    category: 'formatters',
+    tags: ['graphql', 'format', 'beautify', 'query', 'schema'],
+    icon: '◈',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: GraphqlFormatter
+  },
+
+  // Text Manipulation
+  {
+    id: 'case-converter',
+    slug: 'case-converter',
+    name: { en: 'Case Converter', ru: 'Конвертер Регистра' },
+    description: {
+      en: 'Convert text between camelCase, snake_case, PascalCase, kebab-case and more',
+      ru: 'Конвертация текста между camelCase, snake_case, PascalCase, kebab-case и другими'
+    },
+    category: 'text',
+    tags: ['case', 'camel', 'snake', 'pascal', 'kebab', 'convert', 'text'],
+    icon: 'Aa',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CaseConverter
+  },
+
+  {
+    id: 'line-operations',
+    slug: 'line-operations',
+    name: { en: 'Line Operations', ru: 'Операции со Строками' },
+    description: {
+      en: 'Sort, deduplicate, reverse, shuffle and filter lines in text',
+      ru: 'Сортировка, дедупликация, реверс, перемешивание и фильтрация строк текста'
+    },
+    category: 'text',
+    tags: ['lines', 'sort', 'deduplicate', 'unique', 'reverse', 'shuffle', 'filter'],
+    icon: '📋',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: LineOperations
+  },
+
+  {
+    id: 'string-operations',
+    slug: 'string-operations',
+    name: { en: 'String Operations', ru: 'Операции со Строками' },
+    description: {
+      en: 'Find & replace, extract emails/URLs/IPs, and other string operations',
+      ru: 'Поиск и замена, извлечение email/URL/IP и другие операции со строками'
+    },
+    category: 'text',
+    tags: ['string', 'find', 'replace', 'extract', 'email', 'url', 'ip', 'regex'],
+    icon: '🔤',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: StringOperations
+  },
+
+  // Text Analysis
+  {
+    id: 'text-statistics',
+    slug: 'text-statistics',
+    name: { en: 'Text Statistics', ru: 'Статистика Текста' },
+    description: {
+      en: 'Count characters, words, sentences, paragraphs and estimate reading time',
+      ru: 'Подсчёт символов, слов, предложений, абзацев и оценка времени чтения'
+    },
+    category: 'analyzers',
+    tags: ['text', 'statistics', 'count', 'words', 'characters', 'reading', 'time'],
+    icon: '📊',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: TextStatistics
+  },
+
+  {
+    id: 'text-diff',
+    slug: 'text-diff',
+    name: { en: 'Text Diff', ru: 'Сравнение Текста' },
+    description: {
+      en: 'Compare two texts side-by-side or inline with Levenshtein distance',
+      ru: 'Сравнение двух текстов бок о бок или inline с расстоянием Левенштейна'
+    },
+    category: 'analyzers',
+    tags: ['diff', 'compare', 'text', 'levenshtein', 'side-by-side', 'inline'],
+    icon: '⇄',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: TextDiff
+  },
+
+  // Generators (Text)
+  {
+    id: 'lorem-ipsum',
+    slug: 'lorem-ipsum',
+    name: { en: 'Lorem Ipsum Generator', ru: 'Генератор Lorem Ipsum' },
+    description: {
+      en: 'Generate Lorem Ipsum placeholder text in classic, hipster, or office styles',
+      ru: 'Генерация текста-заполнителя Lorem Ipsum в классическом, хипстерском или офисном стиле'
+    },
+    category: 'generators',
+    tags: ['lorem', 'ipsum', 'placeholder', 'text', 'dummy', 'generate'],
+    icon: '📝',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: LoremIpsum
+  },
+
+  {
+    id: 'password-generator',
+    slug: 'password-generator',
+    name: { en: 'Password Generator', ru: 'Генератор Паролей' },
+    description: {
+      en: 'Generate strong secure passwords with customizable options',
+      ru: 'Генерация надёжных паролей с настраиваемыми параметрами'
+    },
+    category: 'generators',
+    tags: ['password', 'generate', 'secure', 'random', 'strong'],
+    icon: '🔑',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: PasswordGenerator
+  },
+
+  {
+    id: 'passphrase-generator',
+    slug: 'passphrase-generator',
+    name: { en: 'Passphrase Generator', ru: 'Генератор Парольных Фраз' },
+    description: {
+      en: 'Generate memorable passphrases using EFF Diceware wordlist',
+      ru: 'Генерация запоминаемых парольных фраз на основе EFF Diceware словаря'
+    },
+    category: 'generators',
+    tags: ['passphrase', 'diceware', 'eff', 'words', 'secure', 'memorable'],
+    icon: '🎲',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: PassphraseGenerator
+  },
+
+  {
+    id: 'slug-generator',
+    slug: 'slug-generator',
+    name: { en: 'Slug Generator', ru: 'Генератор Slug' },
+    description: {
+      en: 'Generate URL-friendly slugs from text with transliteration support',
+      ru: 'Генерация URL-совместимых slug из текста с поддержкой транслитерации'
+    },
+    category: 'generators',
+    tags: ['slug', 'url', 'seo', 'generate', 'transliteration'],
+    icon: '🔗',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: SlugGenerator
+  },
+
+  {
+    id: 'ulid-generator',
+    slug: 'ulid-generator',
+    name: { en: 'ULID Generator', ru: 'Генератор ULID' },
+    description: {
+      en: 'Generate ULIDs with timestamp extraction (sortable unique IDs)',
+      ru: 'Генерация ULID с извлечением timestamp (сортируемые уникальные ID)'
+    },
+    category: 'generators',
+    tags: ['ulid', 'id', 'unique', 'sortable', 'timestamp', 'generate'],
+    icon: '🆔',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: UlidGenerator
+  },
+
+  {
+    id: 'nanoid-generator',
+    slug: 'nanoid-generator',
+    name: { en: 'NanoID Generator', ru: 'Генератор NanoID' },
+    description: {
+      en: 'Generate compact unique IDs with customizable alphabet and length',
+      ru: 'Генерация компактных уникальных ID с настраиваемым алфавитом и длиной'
+    },
+    category: 'generators',
+    tags: ['nanoid', 'id', 'unique', 'compact', 'generate', 'alphabet'],
+    icon: '🔢',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: NanoidGenerator
+  },
+
+  {
+    id: 'fake-data-generator',
+    slug: 'fake-data-generator',
+    name: { en: 'Fake Data Generator', ru: 'Генератор Фейковых Данных' },
+    description: {
+      en: 'Generate realistic fake data for testing: names, emails, addresses, and more',
+      ru: 'Генерация реалистичных фейковых данных для тестирования: имена, email, адреса и другое'
+    },
+    category: 'generators',
+    tags: ['fake', 'data', 'faker', 'mock', 'test', 'names', 'emails', 'addresses'],
+    icon: '🎭',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: FakeDataGenerator
   },
 ];
 

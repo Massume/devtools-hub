@@ -12,7 +12,8 @@ export type ToolCategory =
   | 'database'       // Базы данных
   | 'networking'     // Сеть
   | 'numbers'        // Системы счисления
-  | 'datetime';      // Дата и время
+  | 'datetime'       // Дата и время
+  | 'text';          // Текстовые инструменты
 
 export interface Tool {
   id: string;
