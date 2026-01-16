@@ -63,6 +63,14 @@ import { SlugGenerator } from '@/components/tools/SlugGenerator';
 import { UlidGenerator } from '@/components/tools/UlidGenerator';
 import { NanoidGenerator } from '@/components/tools/NanoidGenerator';
 import { FakeDataGenerator } from '@/components/tools/FakeDataGenerator';
+// Additional Text Tools
+import { MarkdownFormatter } from '@/components/tools/MarkdownFormatter';
+import { WordFrequency } from '@/components/tools/WordFrequency';
+import { PalindromeChecker } from '@/components/tools/PalindromeChecker';
+import { AnagramChecker } from '@/components/tools/AnagramChecker';
+import { DuplicateFinder } from '@/components/tools/DuplicateFinder';
+import { RandomTextGenerator } from '@/components/tools/RandomTextGenerator';
+import { UsernameGenerator } from '@/components/tools/UsernameGenerator';
 
 export const categories: ToolCategoryData[] = [
   {
@@ -1177,6 +1185,126 @@ export const tools: Tool[] = [
     isNew: true,
     isBeta: false,
     component: FakeDataGenerator
+  },
+
+  // Additional Text Tools
+  {
+    id: 'markdown-formatter',
+    slug: 'markdown-formatter',
+    name: { en: 'Markdown Formatter', ru: 'Форматтер Markdown' },
+    description: {
+      en: 'Format and beautify Markdown files with configurable options',
+      ru: 'Форматирование и украшение Markdown файлов с настраиваемыми параметрами'
+    },
+    category: 'formatters',
+    tags: ['markdown', 'format', 'beautify', 'prettier', 'md'],
+    icon: '📝',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: MarkdownFormatter
+  },
+
+  {
+    id: 'word-frequency',
+    slug: 'word-frequency',
+    name: { en: 'Word Frequency Analyzer', ru: 'Анализатор Частоты Слов' },
+    description: {
+      en: 'Analyze word frequency in text with stop words filtering',
+      ru: 'Анализ частоты слов в тексте с фильтрацией стоп-слов'
+    },
+    category: 'analyzers',
+    tags: ['word', 'frequency', 'count', 'analyze', 'text', 'statistics'],
+    icon: '📊',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: WordFrequency
+  },
+
+  {
+    id: 'palindrome-checker',
+    slug: 'palindrome-checker',
+    name: { en: 'Palindrome Checker', ru: 'Проверка Палиндрома' },
+    description: {
+      en: 'Check if text is a palindrome with customizable options',
+      ru: 'Проверка, является ли текст палиндромом с настраиваемыми параметрами'
+    },
+    category: 'analyzers',
+    tags: ['palindrome', 'check', 'text', 'reverse', 'analyze'],
+    icon: '🔄',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: PalindromeChecker
+  },
+
+  {
+    id: 'anagram-checker',
+    slug: 'anagram-checker',
+    name: { en: 'Anagram Checker', ru: 'Проверка Анаграммы' },
+    description: {
+      en: 'Check if two words or phrases are anagrams of each other',
+      ru: 'Проверка, являются ли два слова или фразы анаграммами друг друга'
+    },
+    category: 'analyzers',
+    tags: ['anagram', 'check', 'text', 'letters', 'compare'],
+    icon: '🔀',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: AnagramChecker
+  },
+
+  {
+    id: 'duplicate-finder',
+    slug: 'duplicate-finder',
+    name: { en: 'Duplicate Finder', ru: 'Поиск Дубликатов' },
+    description: {
+      en: 'Find and remove duplicate lines or words in text',
+      ru: 'Поиск и удаление дублирующихся строк или слов в тексте'
+    },
+    category: 'text',
+    tags: ['duplicate', 'find', 'remove', 'unique', 'lines', 'words'],
+    icon: '🔍',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: DuplicateFinder
+  },
+
+  {
+    id: 'random-text-generator',
+    slug: 'random-text-generator',
+    name: { en: 'Random Text Generator', ru: 'Генератор Случайного Текста' },
+    description: {
+      en: 'Generate random text, numbers, and alphanumeric strings',
+      ru: 'Генерация случайного текста, чисел и алфавитно-цифровых строк'
+    },
+    category: 'generators',
+    tags: ['random', 'text', 'generate', 'string', 'alphanumeric'],
+    icon: '🎲',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: RandomTextGenerator
+  },
+
+  {
+    id: 'username-generator',
+    slug: 'username-generator',
+    name: { en: 'Username Generator', ru: 'Генератор Никнеймов' },
+    description: {
+      en: 'Generate creative usernames for gaming, social media, and more',
+      ru: 'Генерация креативных никнеймов для игр, соцсетей и многого другого'
+    },
+    category: 'generators',
+    tags: ['username', 'nickname', 'generate', 'gaming', 'social'],
+    icon: '👤',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: UsernameGenerator
   },
 ];
 
