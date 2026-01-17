@@ -95,6 +95,46 @@ import { ApiKeyGenerator } from '@/components/tools/ApiKeyGenerator';
 import { PemParser } from '@/components/tools/PemParser';
 import { X509Decoder } from '@/components/tools/X509Decoder';
 import { Asn1Parser } from '@/components/tools/Asn1Parser';
+// Web Development Tools
+import { BoxShadowGenerator } from '@/components/tools/BoxShadowGenerator';
+import { TextShadowGenerator } from '@/components/tools/TextShadowGenerator';
+import { BorderRadiusGenerator } from '@/components/tools/BorderRadiusGenerator';
+import { FlexboxPlayground } from '@/components/tools/FlexboxPlayground';
+import { RegexTester } from '@/components/tools/RegexTester';
+import { CssFilterGenerator } from '@/components/tools/CssFilterGenerator';
+import { CssTransformVisualizer } from '@/components/tools/CssTransformVisualizer';
+import { GridGenerator } from '@/components/tools/GridGenerator';
+import { CssAnimationGenerator } from '@/components/tools/CssAnimationGenerator';
+import { CssUnitsConverter } from '@/components/tools/CssUnitsConverter';
+import { CssSpecificityCalculator } from '@/components/tools/CssSpecificityCalculator';
+import { ContrastChecker } from '@/components/tools/ContrastChecker';
+import { JsonPathTester } from '@/components/tools/JsonPathTester';
+import { EventKeycodes } from '@/components/tools/EventKeycodes';
+import { JsMinifier } from '@/components/tools/JsMinifier';
+import { UrlParser } from '@/components/tools/UrlParser';
+import { UtmBuilder } from '@/components/tools/UtmBuilder';
+import { DataUriGenerator } from '@/components/tools/DataUriGenerator';
+import { ColorPaletteGenerator } from '@/components/tools/ColorPaletteGenerator';
+import { HtmlTagStripper } from '@/components/tools/HtmlTagStripper';
+import { MetaTagsGenerator } from '@/components/tools/MetaTagsGenerator';
+import { OpenGraphGenerator } from '@/components/tools/OpenGraphGenerator';
+import { TwitterCardGenerator } from '@/components/tools/TwitterCardGenerator';
+import { JsonLdGenerator } from '@/components/tools/JsonLdGenerator';
+import { MediaQueryGenerator } from '@/components/tools/MediaQueryGenerator';
+import { CubicBezierEditor } from '@/components/tools/CubicBezierEditor';
+import { DataUriDecoder } from '@/components/tools/DataUriDecoder';
+import { HtmlTableGenerator } from '@/components/tools/HtmlTableGenerator';
+import { HtmlListGenerator } from '@/components/tools/HtmlListGenerator';
+import { FaviconGenerator } from '@/components/tools/FaviconGenerator';
+import { CssVariablesGenerator } from '@/components/tools/CssVariablesGenerator';
+import { ClipPathGenerator } from '@/components/tools/ClipPathGenerator';
+import { RegexGenerator } from '@/components/tools/RegexGenerator';
+import { StackTraceParser } from '@/components/tools/StackTraceParser';
+import { UrlBuilder } from '@/components/tools/UrlBuilder';
+import { DeepLinkGenerator } from '@/components/tools/DeepLinkGenerator';
+import { ColorConverter } from '@/components/tools/ColorConverter';
+import { JsObfuscator } from '@/components/tools/JsObfuscator';
+import { AstExplorer } from '@/components/tools/AstExplorer';
 
 export const categories: ToolCategoryData[] = [
   {
@@ -1721,6 +1761,673 @@ export const tools: Tool[] = [
     isNew: true,
     isBeta: false,
     component: Asn1Parser
+  },
+
+  // Web Development Tools - CSS
+
+  {
+    id: 'box-shadow-generator',
+    slug: 'box-shadow-generator',
+    name: { en: 'Box Shadow Generator', ru: 'Генератор Box Shadow' },
+    description: {
+      en: 'Create CSS box shadows with live preview and multiple layers',
+      ru: 'Создание CSS box-shadow с предпросмотром и несколькими слоями'
+    },
+    category: 'generators',
+    tags: ['css', 'box-shadow', 'shadow', 'generator', 'visual'],
+    icon: '🎨',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: BoxShadowGenerator
+  },
+
+  {
+    id: 'text-shadow-generator',
+    slug: 'text-shadow-generator',
+    name: { en: 'Text Shadow Generator', ru: 'Генератор Text Shadow' },
+    description: {
+      en: 'Create CSS text shadows with live preview and presets',
+      ru: 'Создание CSS text-shadow с предпросмотром и готовыми шаблонами'
+    },
+    category: 'generators',
+    tags: ['css', 'text-shadow', 'shadow', 'generator', 'typography'],
+    icon: '✨',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: TextShadowGenerator
+  },
+
+  {
+    id: 'border-radius-generator',
+    slug: 'border-radius-generator',
+    name: { en: 'Border Radius Generator', ru: 'Генератор Border Radius' },
+    description: {
+      en: 'Create CSS border-radius with individual corner control',
+      ru: 'Создание CSS border-radius с контролем каждого угла'
+    },
+    category: 'generators',
+    tags: ['css', 'border-radius', 'corners', 'generator', 'visual'],
+    icon: '⬜',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: BorderRadiusGenerator
+  },
+
+  {
+    id: 'flexbox-playground',
+    slug: 'flexbox-playground',
+    name: { en: 'Flexbox Playground', ru: 'Flexbox Песочница' },
+    description: {
+      en: 'Interactive CSS Flexbox layout playground with live preview',
+      ru: 'Интерактивная песочница для CSS Flexbox с предпросмотром'
+    },
+    category: 'generators',
+    tags: ['css', 'flexbox', 'layout', 'interactive', 'visual'],
+    icon: '📐',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: FlexboxPlayground
+  },
+
+  // Web Development Tools - JavaScript
+
+  {
+    id: 'regex-tester',
+    slug: 'regex-tester',
+    name: { en: 'Regex Tester', ru: 'Тестер Regex' },
+    description: {
+      en: 'Test and debug regular expressions with match highlighting',
+      ru: 'Тестирование и отладка регулярных выражений с подсветкой'
+    },
+    category: 'analyzers',
+    tags: ['regex', 'regexp', 'pattern', 'test', 'match'],
+    icon: '🔍',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: RegexTester
+  },
+
+  {
+    id: 'css-filter-generator',
+    slug: 'css-filter-generator',
+    name: { en: 'CSS Filter Generator', ru: 'Генератор CSS Фильтров' },
+    description: {
+      en: 'Create CSS filters with live preview and presets',
+      ru: 'Создание CSS фильтров с предпросмотром и пресетами'
+    },
+    category: 'generators',
+    tags: ['css', 'filter', 'blur', 'grayscale', 'visual'],
+    icon: '🎭',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CssFilterGenerator
+  },
+
+  {
+    id: 'css-transform-visualizer',
+    slug: 'css-transform-visualizer',
+    name: { en: 'CSS Transform Visualizer', ru: 'Визуализатор CSS Transform' },
+    description: {
+      en: 'Interactive 2D and 3D CSS transform playground',
+      ru: 'Интерактивная площадка для 2D и 3D CSS трансформаций'
+    },
+    category: 'generators',
+    tags: ['css', 'transform', 'rotate', 'scale', '3d', 'visual'],
+    icon: '🔄',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CssTransformVisualizer
+  },
+
+  {
+    id: 'grid-generator',
+    slug: 'grid-generator',
+    name: { en: 'CSS Grid Generator', ru: 'Генератор CSS Grid' },
+    description: {
+      en: 'Visual CSS Grid layout builder with item placement',
+      ru: 'Визуальный построитель CSS Grid с размещением элементов'
+    },
+    category: 'generators',
+    tags: ['css', 'grid', 'layout', 'visual', 'responsive'],
+    icon: '🔲',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: GridGenerator
+  },
+
+  {
+    id: 'css-animation-generator',
+    slug: 'css-animation-generator',
+    name: { en: 'CSS Animation Generator', ru: 'Генератор CSS Анимаций' },
+    description: {
+      en: 'Create CSS keyframe animations with visual editor',
+      ru: 'Создание CSS анимаций с визуальным редактором'
+    },
+    category: 'generators',
+    tags: ['css', 'animation', 'keyframes', 'visual', 'motion'],
+    icon: '🎬',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CssAnimationGenerator
+  },
+
+  {
+    id: 'css-units-converter',
+    slug: 'css-units-converter',
+    name: { en: 'CSS Units Converter', ru: 'Конвертер CSS Единиц' },
+    description: {
+      en: 'Convert between px, em, rem, %, vw, vh and more',
+      ru: 'Конвертация между px, em, rem, %, vw, vh и другими'
+    },
+    category: 'converters',
+    tags: ['css', 'units', 'px', 'rem', 'em', 'convert'],
+    icon: '📐',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CssUnitsConverter
+  },
+
+  {
+    id: 'css-specificity-calculator',
+    slug: 'css-specificity-calculator',
+    name: { en: 'CSS Specificity Calculator', ru: 'Калькулятор CSS Специфичности' },
+    description: {
+      en: 'Calculate and compare CSS selector specificity',
+      ru: 'Расчёт и сравнение специфичности CSS селекторов'
+    },
+    category: 'analyzers',
+    tags: ['css', 'specificity', 'selector', 'calculate'],
+    icon: '⚖️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CssSpecificityCalculator
+  },
+
+  {
+    id: 'contrast-checker',
+    slug: 'contrast-checker',
+    name: { en: 'WCAG Contrast Checker', ru: 'Проверка контраста WCAG' },
+    description: {
+      en: 'Check color contrast ratio for WCAG accessibility compliance',
+      ru: 'Проверка контрастности цветов для соответствия WCAG'
+    },
+    category: 'analyzers',
+    tags: ['wcag', 'accessibility', 'contrast', 'a11y', 'color'],
+    icon: '👁️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: ContrastChecker
+  },
+
+  {
+    id: 'json-path-tester',
+    slug: 'json-path-tester',
+    name: { en: 'JSONPath Tester', ru: 'Тестер JSONPath' },
+    description: {
+      en: 'Test JSONPath expressions against JSON data',
+      ru: 'Тестирование JSONPath выражений на JSON данных'
+    },
+    category: 'analyzers',
+    tags: ['json', 'jsonpath', 'query', 'test', 'extract'],
+    icon: '🎯',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: JsonPathTester
+  },
+
+  {
+    id: 'event-keycodes',
+    slug: 'event-keycodes',
+    name: { en: 'Event Keycodes', ru: 'Коды клавиш' },
+    description: {
+      en: 'JavaScript keyboard event codes reference and tester',
+      ru: 'Справочник и тестер кодов клавиш JavaScript'
+    },
+    category: 'analyzers',
+    tags: ['javascript', 'keyboard', 'keycode', 'event', 'key'],
+    icon: '⌨️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: EventKeycodes
+  },
+
+  {
+    id: 'js-minifier',
+    slug: 'js-minifier',
+    name: { en: 'JavaScript Minifier', ru: 'JavaScript Минификатор' },
+    description: {
+      en: 'Minify JavaScript code with Terser',
+      ru: 'Минификация JavaScript кода с помощью Terser'
+    },
+    category: 'formatters',
+    tags: ['javascript', 'minify', 'compress', 'optimize', 'terser'],
+    icon: '📦',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: JsMinifier
+  },
+
+  {
+    id: 'url-parser',
+    slug: 'url-parser',
+    name: { en: 'URL Parser', ru: 'Парсер URL' },
+    description: {
+      en: 'Parse and analyze URL components',
+      ru: 'Парсинг и анализ компонентов URL'
+    },
+    category: 'analyzers',
+    tags: ['url', 'parse', 'query', 'params', 'web'],
+    icon: '🔗',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: UrlParser
+  },
+
+  {
+    id: 'utm-builder',
+    slug: 'utm-builder',
+    name: { en: 'UTM Builder', ru: 'UTM Конструктор' },
+    description: {
+      en: 'Build URLs with UTM tracking parameters',
+      ru: 'Создание URL с UTM параметрами отслеживания'
+    },
+    category: 'generators',
+    tags: ['utm', 'url', 'marketing', 'analytics', 'tracking'],
+    icon: '📊',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: UtmBuilder
+  },
+
+  {
+    id: 'data-uri-generator',
+    slug: 'data-uri-generator',
+    name: { en: 'Data URI Generator', ru: 'Генератор Data URI' },
+    description: {
+      en: 'Convert files to Data URI format',
+      ru: 'Конвертация файлов в формат Data URI'
+    },
+    category: 'converters',
+    tags: ['data-uri', 'base64', 'image', 'embed', 'convert'],
+    icon: '📄',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: DataUriGenerator
+  },
+
+  {
+    id: 'color-palette-generator',
+    slug: 'color-palette-generator',
+    name: { en: 'Color Palette Generator', ru: 'Генератор Цветовых Палитр' },
+    description: {
+      en: 'Generate harmonious color palettes based on color theory',
+      ru: 'Генерация гармоничных цветовых палитр на основе теории цвета'
+    },
+    category: 'generators',
+    tags: ['color', 'palette', 'design', 'harmony', 'css'],
+    icon: '🎨',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: ColorPaletteGenerator
+  },
+
+  {
+    id: 'html-tag-stripper',
+    slug: 'html-tag-stripper',
+    name: { en: 'HTML Tag Stripper', ru: 'Удаление HTML Тегов' },
+    description: {
+      en: 'Remove HTML tags from content with customizable options',
+      ru: 'Удаление HTML тегов из контента с настраиваемыми опциями'
+    },
+    category: 'converters',
+    tags: ['html', 'strip', 'tags', 'text', 'clean'],
+    icon: '🧹',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: HtmlTagStripper
+  },
+
+  {
+    id: 'meta-tags-generator',
+    slug: 'meta-tags-generator',
+    name: { en: 'Meta Tags Generator', ru: 'Генератор Meta Тегов' },
+    description: {
+      en: 'Generate SEO-optimized meta tags for your pages',
+      ru: 'Генерация SEO-оптимизированных мета-тегов для страниц'
+    },
+    category: 'generators',
+    tags: ['meta', 'seo', 'html', 'tags', 'head'],
+    icon: '🏷️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: MetaTagsGenerator
+  },
+
+  {
+    id: 'open-graph-generator',
+    slug: 'open-graph-generator',
+    name: { en: 'Open Graph Generator', ru: 'Генератор Open Graph' },
+    description: {
+      en: 'Generate Open Graph meta tags for social media sharing',
+      ru: 'Генерация Open Graph мета-тегов для соцсетей'
+    },
+    category: 'generators',
+    tags: ['opengraph', 'og', 'social', 'facebook', 'meta'],
+    icon: '📱',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: OpenGraphGenerator
+  },
+
+  {
+    id: 'twitter-card-generator',
+    slug: 'twitter-card-generator',
+    name: { en: 'Twitter Card Generator', ru: 'Генератор Twitter Card' },
+    description: {
+      en: 'Generate Twitter Card meta tags for rich media tweets',
+      ru: 'Генерация Twitter Card мета-тегов для твитов с медиа'
+    },
+    category: 'generators',
+    tags: ['twitter', 'card', 'social', 'meta', 'x'],
+    icon: '🐦',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: TwitterCardGenerator
+  },
+
+  {
+    id: 'jsonld-generator',
+    slug: 'jsonld-generator',
+    name: { en: 'JSON-LD Generator', ru: 'Генератор JSON-LD' },
+    description: {
+      en: 'Generate Schema.org JSON-LD structured data',
+      ru: 'Генерация структурированных данных Schema.org JSON-LD'
+    },
+    category: 'generators',
+    tags: ['jsonld', 'schema', 'seo', 'structured', 'data'],
+    icon: '📊',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: JsonLdGenerator
+  },
+
+  {
+    id: 'media-query-generator',
+    slug: 'media-query-generator',
+    name: { en: 'Media Query Generator', ru: 'Генератор Media Query' },
+    description: {
+      en: 'Build CSS media queries with presets and custom conditions',
+      ru: 'Создание CSS media queries с пресетами и условиями'
+    },
+    category: 'generators',
+    tags: ['css', 'media', 'query', 'responsive', 'breakpoint'],
+    icon: '📱',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: MediaQueryGenerator
+  },
+
+  {
+    id: 'cubic-bezier-editor',
+    slug: 'cubic-bezier-editor',
+    name: { en: 'Cubic Bezier Editor', ru: 'Редактор Cubic Bezier' },
+    description: {
+      en: 'Visual CSS cubic-bezier curve editor with animation preview',
+      ru: 'Визуальный редактор кривых cubic-bezier с предпросмотром'
+    },
+    category: 'generators',
+    tags: ['css', 'bezier', 'animation', 'easing', 'transition'],
+    icon: '📈',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CubicBezierEditor
+  },
+
+  {
+    id: 'data-uri-decoder',
+    slug: 'data-uri-decoder',
+    name: { en: 'Data URI Decoder', ru: 'Декодер Data URI' },
+    description: {
+      en: 'Decode Data URIs and preview content',
+      ru: 'Декодирование Data URI и предпросмотр содержимого'
+    },
+    category: 'converters',
+    tags: ['data-uri', 'base64', 'decode', 'preview'],
+    icon: '🔓',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: DataUriDecoder
+  },
+
+  {
+    id: 'html-table-generator',
+    slug: 'html-table-generator',
+    name: { en: 'HTML Table Generator', ru: 'Генератор HTML Таблиц' },
+    description: {
+      en: 'Create HTML tables with visual editor and CSV import',
+      ru: 'Создание HTML таблиц с визуальным редактором и импортом CSV'
+    },
+    category: 'generators',
+    tags: ['html', 'table', 'csv', 'visual', 'editor'],
+    icon: '📊',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: HtmlTableGenerator
+  },
+
+  {
+    id: 'html-list-generator',
+    slug: 'html-list-generator',
+    name: { en: 'HTML List Generator', ru: 'Генератор HTML Списков' },
+    description: {
+      en: 'Generate ordered, unordered and description lists',
+      ru: 'Генерация нумерованных, маркированных и списков определений'
+    },
+    category: 'generators',
+    tags: ['html', 'list', 'ul', 'ol', 'dl', 'nested'],
+    icon: '📝',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: HtmlListGenerator
+  },
+
+  {
+    id: 'favicon-generator',
+    slug: 'favicon-generator',
+    name: { en: 'Favicon Generator', ru: 'Генератор Favicon' },
+    description: {
+      en: 'Generate favicons from images in multiple sizes',
+      ru: 'Генерация favicon из изображений в разных размерах'
+    },
+    category: 'image',
+    tags: ['favicon', 'ico', 'icon', 'image', 'convert'],
+    icon: '🌟',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: FaviconGenerator
+  },
+
+  {
+    id: 'css-variables-generator',
+    slug: 'css-variables-generator',
+    name: { en: 'CSS Variables Generator', ru: 'Генератор CSS Переменных' },
+    description: {
+      en: 'Generate CSS custom properties with live preview',
+      ru: 'Генерация CSS переменных с предпросмотром'
+    },
+    category: 'generators',
+    tags: ['css', 'variables', 'custom-properties', 'theme'],
+    icon: '🎨',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CssVariablesGenerator
+  },
+
+  {
+    id: 'clip-path-generator',
+    slug: 'clip-path-generator',
+    name: { en: 'Clip-path Generator', ru: 'Генератор Clip-path' },
+    description: {
+      en: 'Visual CSS clip-path editor with polygon, circle, ellipse',
+      ru: 'Визуальный редактор CSS clip-path с полигонами, кругами, эллипсами'
+    },
+    category: 'generators',
+    tags: ['css', 'clip-path', 'polygon', 'shape', 'visual'],
+    icon: '✂️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: ClipPathGenerator
+  },
+
+  {
+    id: 'regex-generator',
+    slug: 'regex-generator',
+    name: { en: 'Regex Generator', ru: 'Генератор Regex' },
+    description: {
+      en: 'Generate common regex patterns with testing',
+      ru: 'Генерация распространённых regex паттернов с тестированием'
+    },
+    category: 'generators',
+    tags: ['regex', 'pattern', 'generate', 'test', 'validate'],
+    icon: '🔤',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: RegexGenerator
+  },
+
+  {
+    id: 'stack-trace-parser',
+    slug: 'stack-trace-parser',
+    name: { en: 'Stack Trace Parser', ru: 'Парсер Stack Trace' },
+    description: {
+      en: 'Parse and analyze JavaScript/Node.js stack traces',
+      ru: 'Парсинг и анализ JavaScript/Node.js stack trace'
+    },
+    category: 'analyzers',
+    tags: ['stack', 'trace', 'error', 'debug', 'parse'],
+    icon: '🔍',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: StackTraceParser
+  },
+
+  {
+    id: 'url-builder',
+    slug: 'url-builder',
+    name: { en: 'URL Builder', ru: 'Конструктор URL' },
+    description: {
+      en: 'Build and compose URLs with query parameters',
+      ru: 'Создание и сборка URL с query параметрами'
+    },
+    category: 'generators',
+    tags: ['url', 'build', 'query', 'params', 'compose'],
+    icon: '🔗',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: UrlBuilder
+  },
+
+  {
+    id: 'deep-link-generator',
+    slug: 'deep-link-generator',
+    name: { en: 'Deep Link Generator', ru: 'Генератор Deep Link' },
+    description: {
+      en: 'Generate iOS Universal Links and Android App Links',
+      ru: 'Генерация iOS Universal Links и Android App Links'
+    },
+    category: 'generators',
+    tags: ['deeplink', 'ios', 'android', 'universal', 'applink'],
+    icon: '📲',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: DeepLinkGenerator
+  },
+
+  {
+    id: 'color-converter',
+    slug: 'color-converter',
+    name: { en: 'Color Converter', ru: 'Конвертер Цветов' },
+    description: {
+      en: 'Convert colors between HEX, RGB, HSL, CMYK formats',
+      ru: 'Конвертация цветов между HEX, RGB, HSL, CMYK форматами'
+    },
+    category: 'converters',
+    tags: ['color', 'hex', 'rgb', 'hsl', 'cmyk', 'convert'],
+    icon: '🎨',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: ColorConverter
+  },
+
+  {
+    id: 'js-obfuscator',
+    slug: 'js-obfuscator',
+    name: { en: 'JavaScript Obfuscator', ru: 'JavaScript Обфускатор' },
+    description: {
+      en: 'Obfuscate JavaScript code to protect intellectual property',
+      ru: 'Обфускация JavaScript кода для защиты интеллектуальной собственности'
+    },
+    category: 'security',
+    tags: ['javascript', 'obfuscate', 'minify', 'protect', 'code'],
+    icon: '🔒',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: JsObfuscator
+  },
+
+  {
+    id: 'ast-explorer',
+    slug: 'ast-explorer',
+    name: { en: 'AST Explorer', ru: 'AST Explorer' },
+    description: {
+      en: 'Parse JavaScript and visualize Abstract Syntax Tree',
+      ru: 'Парсинг JavaScript и визуализация абстрактного синтаксического дерева'
+    },
+    category: 'analyzers',
+    tags: ['ast', 'javascript', 'parse', 'syntax', 'tree'],
+    icon: '🌳',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: AstExplorer
   },
 ];
 
