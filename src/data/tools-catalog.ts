@@ -71,6 +71,30 @@ import { AnagramChecker } from '@/components/tools/AnagramChecker';
 import { DuplicateFinder } from '@/components/tools/DuplicateFinder';
 import { RandomTextGenerator } from '@/components/tools/RandomTextGenerator';
 import { UsernameGenerator } from '@/components/tools/UsernameGenerator';
+// Cryptography & Security Tools
+import { MultiHash } from '@/components/tools/MultiHash';
+import { HashIdentifier } from '@/components/tools/HashIdentifier';
+import { CaesarCipher } from '@/components/tools/CaesarCipher';
+import { JwtTool } from '@/components/tools/JwtTool';
+import { PasswordStrength } from '@/components/tools/PasswordStrength';
+import { BcryptTool } from '@/components/tools/BcryptTool';
+import { AesEncrypt } from '@/components/tools/AesEncrypt';
+import { VigenereCipher } from '@/components/tools/VigenereCipher';
+import { XorCipher } from '@/components/tools/XorCipher';
+import { RsaKeygen } from '@/components/tools/RsaKeygen';
+import { HibpChecker } from '@/components/tools/HibpChecker';
+import { SecretKeyGenerator } from '@/components/tools/SecretKeyGenerator';
+import { SriGenerator } from '@/components/tools/SriGenerator';
+import { Argon2Tool } from '@/components/tools/Argon2Tool';
+import { Pbkdf2Tool } from '@/components/tools/Pbkdf2Tool';
+import { OtpCipher } from '@/components/tools/OtpCipher';
+import { CspGenerator } from '@/components/tools/CspGenerator';
+import { CorsGenerator } from '@/components/tools/CorsGenerator';
+import { ChaCha20Encrypt } from '@/components/tools/ChaCha20Encrypt';
+import { ApiKeyGenerator } from '@/components/tools/ApiKeyGenerator';
+import { PemParser } from '@/components/tools/PemParser';
+import { X509Decoder } from '@/components/tools/X509Decoder';
+import { Asn1Parser } from '@/components/tools/Asn1Parser';
 
 export const categories: ToolCategoryData[] = [
   {
@@ -1305,6 +1329,398 @@ export const tools: Tool[] = [
     isNew: true,
     isBeta: false,
     component: UsernameGenerator
+  },
+
+  // Cryptography & Security Tools
+  {
+    id: 'multi-hash',
+    slug: 'multi-hash',
+    name: { en: 'Multi-Hash Generator', ru: 'Мульти-Хеш Генератор' },
+    description: {
+      en: 'Generate hashes using MD5, SHA-1, SHA-256, SHA-512, SHA-3, BLAKE2, and more',
+      ru: 'Генерация хешей MD5, SHA-1, SHA-256, SHA-512, SHA-3, BLAKE2 и других'
+    },
+    category: 'security',
+    tags: ['hash', 'md5', 'sha256', 'sha512', 'sha3', 'blake2', 'crypto'],
+    icon: '#️⃣',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: MultiHash
+  },
+
+  {
+    id: 'hash-identifier',
+    slug: 'hash-identifier',
+    name: { en: 'Hash Identifier', ru: 'Идентификатор Хешей' },
+    description: {
+      en: 'Identify the type of hash from its format and characteristics',
+      ru: 'Определение типа хеша по его формату и характеристикам'
+    },
+    category: 'security',
+    tags: ['hash', 'identify', 'detect', 'md5', 'sha', 'bcrypt'],
+    icon: '🔍',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: HashIdentifier
+  },
+
+  {
+    id: 'caesar-cipher',
+    slug: 'caesar-cipher',
+    name: { en: 'Caesar Cipher', ru: 'Шифр Цезаря' },
+    description: {
+      en: 'Encrypt and decrypt text using the classic Caesar cipher',
+      ru: 'Шифрование и дешифрование текста классическим шифром Цезаря'
+    },
+    category: 'security',
+    tags: ['caesar', 'cipher', 'encrypt', 'decrypt', 'classic', 'rot'],
+    icon: '🏛️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CaesarCipher
+  },
+
+  {
+    id: 'jwt-tool',
+    slug: 'jwt-tool',
+    name: { en: 'JWT Decoder/Encoder', ru: 'JWT Декодер/Энкодер' },
+    description: {
+      en: 'Decode, encode, and validate JSON Web Tokens (JWT)',
+      ru: 'Декодирование, кодирование и валидация JSON Web Tokens (JWT)'
+    },
+    category: 'security',
+    tags: ['jwt', 'token', 'decode', 'encode', 'auth', 'json'],
+    icon: '🎫',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: JwtTool
+  },
+
+  {
+    id: 'password-strength',
+    slug: 'password-strength',
+    name: { en: 'Password Strength Checker', ru: 'Проверка Надёжности Пароля' },
+    description: {
+      en: 'Check password strength with detailed analysis and crack time estimates',
+      ru: 'Проверка надёжности пароля с детальным анализом и оценкой времени взлома'
+    },
+    category: 'security',
+    tags: ['password', 'strength', 'security', 'zxcvbn', 'check'],
+    icon: '💪',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: PasswordStrength
+  },
+
+  {
+    id: 'bcrypt-tool',
+    slug: 'bcrypt-tool',
+    name: { en: 'Bcrypt Hash Tool', ru: 'Bcrypt Генератор' },
+    description: {
+      en: 'Generate and verify bcrypt password hashes with customizable cost factor',
+      ru: 'Генерация и проверка bcrypt хешей паролей с настраиваемым фактором стоимости'
+    },
+    category: 'security',
+    tags: ['bcrypt', 'hash', 'password', 'verify', 'salt'],
+    icon: '🔐',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: BcryptTool
+  },
+
+  {
+    id: 'aes-encrypt',
+    slug: 'aes-encrypt',
+    name: { en: 'AES Encrypt/Decrypt', ru: 'AES Шифрование' },
+    description: {
+      en: 'Encrypt and decrypt data using AES-256-GCM symmetric encryption',
+      ru: 'Шифрование и дешифрование данных с помощью AES-256-GCM'
+    },
+    category: 'security',
+    tags: ['aes', 'encrypt', 'decrypt', 'gcm', 'symmetric', 'crypto'],
+    icon: '🔒',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: AesEncrypt
+  },
+
+  {
+    id: 'vigenere-cipher',
+    slug: 'vigenere-cipher',
+    name: { en: 'Vigenère Cipher', ru: 'Шифр Виженера' },
+    description: {
+      en: 'Encrypt and decrypt text using the classic Vigenère polyalphabetic cipher',
+      ru: 'Шифрование и дешифрование текста классическим полиалфавитным шифром Виженера'
+    },
+    category: 'security',
+    tags: ['vigenere', 'cipher', 'encrypt', 'decrypt', 'polyalphabetic', 'classic'],
+    icon: '🔣',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: VigenereCipher
+  },
+
+  {
+    id: 'xor-cipher',
+    slug: 'xor-cipher',
+    name: { en: 'XOR Cipher', ru: 'XOR Шифр' },
+    description: {
+      en: 'Encrypt and decrypt data using XOR operation with multiple key formats',
+      ru: 'Шифрование и дешифрование данных с помощью операции XOR с разными форматами ключей'
+    },
+    category: 'security',
+    tags: ['xor', 'cipher', 'encrypt', 'decrypt', 'binary', 'hex'],
+    icon: '⊕',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: XorCipher
+  },
+
+  {
+    id: 'rsa-keygen',
+    slug: 'rsa-keygen',
+    name: { en: 'RSA Key Generator', ru: 'Генератор RSA Ключей' },
+    description: {
+      en: 'Generate RSA key pairs for asymmetric encryption with PEM export',
+      ru: 'Генерация пар RSA ключей для асимметричного шифрования с экспортом в PEM'
+    },
+    category: 'security',
+    tags: ['rsa', 'key', 'generate', 'asymmetric', 'pem', 'pkcs8', 'spki'],
+    icon: '🔑',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: RsaKeygen
+  },
+
+  {
+    id: 'hibp-checker',
+    slug: 'hibp-checker',
+    name: { en: 'Password Breach Checker', ru: 'Проверка Утечки Паролей' },
+    description: {
+      en: 'Check if your password has been exposed in data breaches using HIBP API',
+      ru: 'Проверка, был ли ваш пароль раскрыт в утечках данных через HIBP API'
+    },
+    category: 'security',
+    tags: ['hibp', 'password', 'breach', 'security', 'pwned', 'check'],
+    icon: '🔓',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: HibpChecker
+  },
+
+  {
+    id: 'secret-key-generator',
+    slug: 'secret-key-generator',
+    name: { en: 'Secret Key Generator', ru: 'Генератор Секретных Ключей' },
+    description: {
+      en: 'Generate cryptographically secure random keys for encryption and APIs',
+      ru: 'Генерация криптографически безопасных случайных ключей для шифрования и API'
+    },
+    category: 'security',
+    tags: ['secret', 'key', 'generate', 'random', 'crypto', 'api'],
+    icon: '🗝️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: SecretKeyGenerator
+  },
+
+  {
+    id: 'sri-generator',
+    slug: 'sri-generator',
+    name: { en: 'SRI Hash Generator', ru: 'Генератор SRI Хешей' },
+    description: {
+      en: 'Generate Subresource Integrity hashes for secure script and style loading',
+      ru: 'Генерация SRI хешей для безопасной загрузки скриптов и стилей'
+    },
+    category: 'security',
+    tags: ['sri', 'integrity', 'hash', 'security', 'cdn', 'script'],
+    icon: '🛡️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: SriGenerator
+  },
+
+  {
+    id: 'argon2-tool',
+    slug: 'argon2-tool',
+    name: { en: 'Argon2 Hash Tool', ru: 'Argon2 Генератор' },
+    description: {
+      en: 'Generate and verify Argon2 password hashes (2d, 2i, 2id variants)',
+      ru: 'Генерация и проверка Argon2 хешей паролей (варианты 2d, 2i, 2id)'
+    },
+    category: 'security',
+    tags: ['argon2', 'hash', 'password', 'phc', 'wasm'],
+    icon: '🏆',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: Argon2Tool
+  },
+
+  {
+    id: 'pbkdf2-tool',
+    slug: 'pbkdf2-tool',
+    name: { en: 'PBKDF2 Key Derivation', ru: 'PBKDF2 Деривация Ключей' },
+    description: {
+      en: 'Derive cryptographic keys from passwords using PBKDF2',
+      ru: 'Деривация криптографических ключей из паролей с помощью PBKDF2'
+    },
+    category: 'security',
+    tags: ['pbkdf2', 'key', 'derivation', 'password', 'crypto'],
+    icon: '🔑',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: Pbkdf2Tool
+  },
+
+  {
+    id: 'otp-cipher',
+    slug: 'otp-cipher',
+    name: { en: 'One-Time Pad Cipher', ru: 'Шифр Одноразового Блокнота' },
+    description: {
+      en: 'Encrypt with perfect secrecy using one-time pad (Vernam cipher)',
+      ru: 'Шифрование с абсолютной секретностью с помощью одноразового блокнота (шифр Вернама)'
+    },
+    category: 'security',
+    tags: ['otp', 'vernam', 'cipher', 'perfect', 'secrecy', 'xor'],
+    icon: '📜',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: OtpCipher
+  },
+
+  {
+    id: 'csp-generator',
+    slug: 'csp-generator',
+    name: { en: 'CSP Header Generator', ru: 'Генератор CSP Заголовков' },
+    description: {
+      en: 'Build Content Security Policy headers to protect against XSS',
+      ru: 'Создание заголовков Content Security Policy для защиты от XSS'
+    },
+    category: 'security',
+    tags: ['csp', 'security', 'header', 'xss', 'policy'],
+    icon: '🛡️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CspGenerator
+  },
+
+  {
+    id: 'cors-generator',
+    slug: 'cors-generator',
+    name: { en: 'CORS Header Generator', ru: 'Генератор CORS Заголовков' },
+    description: {
+      en: 'Configure Cross-Origin Resource Sharing headers for your API',
+      ru: 'Настройка заголовков Cross-Origin Resource Sharing для вашего API'
+    },
+    category: 'security',
+    tags: ['cors', 'header', 'api', 'security', 'origin'],
+    icon: '🔗',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: CorsGenerator
+  },
+
+  {
+    id: 'chacha20-encrypt',
+    slug: 'chacha20-encrypt',
+    name: { en: 'ChaCha20-Poly1305 Encrypt', ru: 'ChaCha20-Poly1305 Шифрование' },
+    description: {
+      en: 'Authenticated encryption using ChaCha20-Poly1305 algorithm',
+      ru: 'Аутентифицированное шифрование с использованием алгоритма ChaCha20-Poly1305'
+    },
+    category: 'security',
+    tags: ['chacha20', 'poly1305', 'encrypt', 'aead', 'stream'],
+    icon: '🔐',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: ChaCha20Encrypt
+  },
+
+  {
+    id: 'api-key-generator',
+    slug: 'api-key-generator',
+    name: { en: 'API Key Generator', ru: 'Генератор API Ключей' },
+    description: {
+      en: 'Generate secure API keys in various formats (Stripe, AWS, GitHub style)',
+      ru: 'Генерация безопасных API ключей в различных форматах (Stripe, AWS, GitHub)'
+    },
+    category: 'security',
+    tags: ['api', 'key', 'token', 'generate', 'auth'],
+    icon: '🗝️',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: ApiKeyGenerator
+  },
+
+  {
+    id: 'pem-parser',
+    slug: 'pem-parser',
+    name: { en: 'PEM Parser', ru: 'Парсер PEM' },
+    description: {
+      en: 'Parse and analyze PEM encoded certificates, keys, and CSRs',
+      ru: 'Парсинг и анализ сертификатов, ключей и CSR в формате PEM'
+    },
+    category: 'security',
+    tags: ['pem', 'certificate', 'key', 'csr', 'parse'],
+    icon: '📜',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: PemParser
+  },
+
+  {
+    id: 'x509-decoder',
+    slug: 'x509-decoder',
+    name: { en: 'X.509 Certificate Decoder', ru: 'Декодер X.509 Сертификатов' },
+    description: {
+      en: 'Decode and inspect X.509 certificates with full details',
+      ru: 'Декодирование и просмотр X.509 сертификатов со всеми деталями'
+    },
+    category: 'security',
+    tags: ['x509', 'certificate', 'ssl', 'tls', 'decode'],
+    icon: '📋',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: X509Decoder
+  },
+
+  {
+    id: 'asn1-parser',
+    slug: 'asn1-parser',
+    name: { en: 'ASN.1 Parser', ru: 'Парсер ASN.1' },
+    description: {
+      en: 'Parse and visualize ASN.1 DER/BER encoded structures',
+      ru: 'Парсинг и визуализация структур в формате ASN.1 DER/BER'
+    },
+    category: 'security',
+    tags: ['asn1', 'der', 'ber', 'parse', 'structure'],
+    icon: '🌳',
+    isPro: false,
+    isNew: true,
+    isBeta: false,
+    component: Asn1Parser
   },
 ];
 
